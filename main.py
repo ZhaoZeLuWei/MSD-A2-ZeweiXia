@@ -51,14 +51,21 @@ class person:
 
 
 #This class is an basic doctor information class
-class Doctor:
-    def __init__(self, firstName, lastName, age, job):
-        self.firstName = firstName
-        self.lastName = lastName
-        self.age = age
-        self.job = job
+class Doctor(person):
+    def __init__(self, job):
+        super().__init__(self.firstName, self.lastName, self.age, self.id)
+        self.job_ = job
 
-    def printDoctor(self):
-        print(self.firstName + " " + self.lastName + " " + self.age + " " + self.job)
+    #getter and setter for each attribute
+    @property
+    def job(self):
+        return self.job_
+
+    @job.setter
+    def job(self, newJob):
+        self.job_ = newJob
+
+    def __str__(self):
+        return self.firstName + " " + self.lastName + " " + self.age + " " + self.job
 
 hello_A2()
