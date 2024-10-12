@@ -83,3 +83,28 @@ class Patient(person):
 
     def __str__(self):
         return self.firstName + " " + self.lastName + " " + self.age + " " + self.illness
+
+class registered:
+    def __init__(self, doctorObj, margin):
+        self.doctorObj_ = doctorObj
+        self.margin_ = margin
+
+    #getter and setter for each attribute
+    @property
+    def doctorObj(self):
+        return self.doctorObj_
+
+    @property
+    def margin(self):
+        return self.margin_
+
+    @doctorObj.setter
+    def doctorObj(self, newDoctorObj):
+        self.doctorObj_ = newDoctorObj
+
+    @margin.setter
+    def margin(self, newMargin):
+        self.margin_ = newMargin
+
+    def __str__(self):
+        return self.doctorObj + " " + self.margin
