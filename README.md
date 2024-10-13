@@ -16,3 +16,10 @@ The **Hospital Information Management System** is a Python-based project aimed a
 - **Improvements**:
   - **Optimization of each class**
   - **README update**
+
+## Project Requirements
+
+- Python Version: 3.8+
+- IDE: PyCharm 2024.2.1
+- Operating System: Windows 10 or higher
+- Other Tools: Git, GitHub Desktop
