@@ -1,3 +1,6 @@
+import pandas
+import numpy
+
 def hello_A2():
     myName = "Zewei_Xia"
     myId = "24517199"
