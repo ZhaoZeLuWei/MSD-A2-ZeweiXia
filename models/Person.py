@@ -48,4 +48,4 @@ class Person:
 
     #return the person's information
     def __str__(self):
-        return self.firstName + " " + self.lastName + " " + self.age + " " + self.id
+        return f"{self.firstName} {self.lastName} {self.age} {self.id}"
