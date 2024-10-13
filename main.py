@@ -6,7 +6,7 @@ def hello_A2():
 
 #This class is an basic person class
 class person:
-    def __init__(self, firstName = None, lastName = None, age = 0, id = 0):
+    def __init__(self, firstName : str = "", lastName : str = "", age : int = 0, id : int = 0):
         self.firstName_ = firstName
         self.lastName_ = lastName
         self.age_ = age
@@ -31,18 +31,26 @@ class person:
 
     @firstName.setter
     def firstName(self, value):
+        if not isinstance(value, str):
+            raise ValueError("firstName must be a string")
         self.firstName_ = value
 
     @lastName.setter
     def lastName(self, value):
+        if not isinstance(value, str):
+            raise ValueError("lastName must be a string")
         self.lastName_ = value
 
     @age.setter
     def age(self, value):
+        if not isinstance(value, int) or value < 0:
+            raise ValueError("age must be a positive number")
         self.age_ = value
 
     @id.setter
     def id(self, value):
+        if not isinstance (value, int) or value < 0:
+            raise ValueError("id must be a positive number")
         self.id_ = value
 
     #return the person's information
@@ -62,6 +70,8 @@ class Doctor(person):
 
     @job.setter
     def job(self, newJob):
+        if not isinstance(newJob, str):
+            raise ValueError("job must be a string")
         self.job_ = newJob
 
     def __str__(self):
@@ -79,31 +89,37 @@ class Patient(person):
 
     @illness.setter
     def illness(self, newIllness):
+        if not isinstance(newIllness, str):
+            raise ValueError("illness must be a string")
         self.illness_ = newIllness
 
     def __str__(self):
         return self.firstName + " " + self.lastName + " " + self.age + " " + self.illness
 
 class registered:
-    def __init__(self, doctorObj, margin):
+    def __init__(self, doctorObj: Doctor, margin: float = 0.0):
         self.doctorObj_ = doctorObj
         self.margin_ = margin
 
     #getter and setter for each attribute
     @property
-    def doctorObj(self):
+    def doctorObj(self) -> Doctor:
         return self.doctorObj_
 
     @property
-    def margin(self):
+    def margin(self) -> float:
         return self.margin_
 
     @doctorObj.setter
     def doctorObj(self, newDoctorObj):
+        if not isinstance(newDoctorObj, Doctor):
+            raise ValueError("The input is not a Doctor object")
         self.doctorObj_ = newDoctorObj
 
     @margin.setter
     def margin(self, newMargin):
+        if not isinstance(newMargin, int) or newMargin < 0:
+            raise ValueError("margin must be a positive number")
         self.margin_ = newMargin
 
     def __str__(self):
