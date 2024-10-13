@@ -17,4 +17,4 @@ class Doctor(Person):
         self.job_ = newJob
 
     def __str__(self):
-        return self.firstName + " " + self.lastName + " " + self.age + " " + self.job
+        return f"{self.firstName} {self.lastName} {self.age} {self.job}"
